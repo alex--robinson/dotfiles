@@ -20,8 +20,17 @@
 #my personal bin
 export PATH=$PATH:$HOME/bin
 
+#vim, rather than emacs key control
+set -o vi
+export EDITOR=vim
+
 #colour
 alias ls='ls -h --color=auto'
+alias grep='grep --color=auto'
+alias pacman='pacman --color=auto'
+
+#auto vlc ncurses
+alias vlc='vlc -I ncurses'
 
 #the prompt
 export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
@@ -71,3 +80,4 @@ alias .5='cd ../../../../..'
 
 ##
 
+#a test comment

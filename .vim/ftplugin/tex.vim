@@ -6,3 +6,6 @@ set sw=2
 " all the figure labels. Very useful!
 set iskeyword+=:
 
+set colorcolumn=
+set winaltkeys=no
+

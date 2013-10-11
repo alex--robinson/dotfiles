@@ -49,6 +49,7 @@ set novisualbell
 set t_vb=
 set tm=500
 set tabstop=4
+set shiftwidth=4
 
 " colorscheme
 colorscheme zenburn
@@ -68,4 +69,7 @@ set grepprg=grep\ -nH\ $*
 filetype indent on
 
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf, aux'
+let g:Tex_ViewRule_PDF = 'apvlv'
 

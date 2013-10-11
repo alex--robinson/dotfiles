@@ -16,5 +16,5 @@ xset dpms 300 600 900 &
 xbacklight -set 90 &
 
 # OSD
-dunst &
+#dunst &
 

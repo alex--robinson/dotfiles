@@ -240,6 +240,7 @@ bar {
         output HDMI1
         position top
         tray_output none
+		status_command ~/.i3/conky
         colors {
                 #statusline #AAAAAA
                 background #181512
