@@ -11,7 +11,7 @@ override_utf8_locale yes
 TEXT
 ,[
 #Finds out if cmus is running. If it is, it provides 1) the current artist and 2) the current track. If cmus isn't running it outputs "Not Running"
-  {"full_text": "[${exec sh .i3/cmusconk.sh}]", "color":"\#d0d293"},
+  {"full_text": "[${exec sh $HOME/.i3/cmusconk.sh}]", "color":"\#d0d293"},
 #Mute?
   {"full_text": "${exec amixer get Master | grep -o "\[o[n,f][f]*\]"}", "color":"\#9aacc3"},
 #Finds current volume. May need modified depending on your setup
@@ -31,7 +31,8 @@ TEXT
 #Shows current CPU usage with a bar
   {"full_text": "■ [${cpu}%]", "color":"\#77bbb5"},
 #Shows battery
-  {"full_text": "B [$battery_short]", "color": "\#bb77a4"},
+  {"full_text": "⚡ [$battery_short]", "color": "\#bb77a4"},
+  #{"full_text": "B [$battery_short]", "color": "\#bb77a4"},
 #Shows uptime
 #  {"full_text": "↑ [${uptime}]","color": "\#bb77a4"},
 #Shows time

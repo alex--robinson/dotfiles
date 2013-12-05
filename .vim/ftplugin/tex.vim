@@ -8,4 +8,5 @@ set iskeyword+=:
 
 set colorcolumn=
 set winaltkeys=no
+setlocal spell spelllang=en_gb
 

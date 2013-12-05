@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# background colour
-xsetroot -solid '#101010' &
 
 # set startup volume
 amixer set Master 40%
@@ -13,8 +11,12 @@ xset -b &
 xset dpms 300 600 900 &
 
 # set LCD brightness
-xbacklight -set 90 &
+xbacklight -set 60 &
 
 # OSD
 #dunst &
+
+# background colour
+#xsetroot -solid '#101010' &
+~/.i3/wallpaper.sh
 
