@@ -1,3 +1,70 @@
+set nocompatible
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'lilydjwg/colorizer'
+
+Bundle 'scrooloose/nerdtree'
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+Bundle 'scrooloose/syntastic'
+
+Bundle 'scrooloose/nerdcommenter'
+
+Bundle 'chrisbra/csv.vim'
+
+Bundle 'bling/vim-airline'
+let g:airline#extensions#csv#enabled = 1
+"removed section y for encoding from bottom right
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'b', 'c' ],
+      \ [ 'x', 'z', 'warning' ]
+      \ ]
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='lucius'
+"let g:airline#extensions#tabline#enabled = 1
+"replaced with bufferline
+Bundle 'bling/vim-bufferline'
+let g:airline#extensions#bufferline#enabled = 1
+
+Bundle 'kien/ctrlp.vim'
+let g:ctrlp_working_path_mode='c'
+
+Bundle 'vim-latex/vim-latex'
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf, aux'
+let g:Tex_ViewRule_pdf = 'mupdf'
+"imap <C-space> <Plug>IMAP_JumpForward
+
+Bundle 'tpope/vim-fugitive'
+
+Bundle 'majutsushi/tagbar'
+nmap <C-m> :TagbarToggle<CR>
+
+filetype plugin indent on     " required!
+filetype plugin on
+
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache
+"                        first) for foo
+" :BundleClean(!)      - confirm(or
+"                         auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for
+"                           FAQ
+" NOTE: comments after Bundle command are not
+"                            allowed.
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -50,10 +117,18 @@ set t_vb=
 set tm=500
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " colorscheme
+let g:zenburn_high_Contrast=1
 colorscheme zenburn
 syntax on
+
+"hi Normal ctermbg=NONE
+
+" swapping buffer more rapidly
+map <Leader>k :bnext<cr>
+map <Leader>j :bprev<cr>
 
 " line numbers
 set number
@@ -61,6 +136,11 @@ set number
 " long line marker
 set colorcolumn=80
 
+" highlight current line
+set cursorline
+
+" word counting
+map <F3> :w !detex \| wc -w<CR>
 " for vim-latexsuite
 filetype plugin on
 
@@ -68,8 +148,24 @@ set grepprg=grep\ -nH\ $*
 
 filetype indent on
 
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats = 'pdf, aux'
-let g:Tex_ViewRule_PDF = 'apvlv'
+set winaltkeys=no
+set linebreak
 
+set laststatus=2
+
+set nobackup
+set noswapfile
+set pastetoggle=<F2>
+nmap <silent> ,/ :nohlsearch<CR>
+
+"using the mouse
+set mouse=a
+
+"using semicolon to use the command line
+nnoremap ; :
+
+"easier window navigation
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l

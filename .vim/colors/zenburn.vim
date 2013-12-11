@@ -399,7 +399,8 @@ if exists("g:zenburn_high_Contrast") && g:zenburn_high_Contrast
     hi PmenuSbar       guibg=#2e3330 guifg=#000000
     hi PMenuThumb      guibg=#a0afa0 guifg=#040404
     hi MatchParen      guifg=#f0f0c0 guibg=#383838 gui=bold
-    hi SignColumn      guifg=#9fafaf guibg=#181818 gui=bold
+    "hi SignColumn      guifg=#9fafaf guibg=#181818 gui=bold
+    hi SignColumn      guifg=#9fafaf guibg=#181818 gui=bold ctermbg=Black
     hi TabLineFill     guifg=#cfcfaf guibg=#181818 gui=bold
     hi TabLineSel      guifg=#efefef guibg=#1c1c1b gui=bold
     hi TabLine         guifg=#b6bf98 guibg=#181818 gui=bold

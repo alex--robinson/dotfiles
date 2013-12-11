@@ -1,10 +1,10 @@
 !------------------------------------------------------------------------------
 ! c o l o r -  s e t t i n g s
-
+!
 *background: #222222
 *foreground: #777777
 
-! Default
+! Zenburn-y
 ! 0: black
 *color0:  #222222
 *color8:  #222222
@@ -30,15 +30,22 @@
 *color7:  #777777
 *color15: #777777
 
+
 !------------------------------------------------------------------------------
 ! u r x v t
 
 URxvt*geometry:         112x22  
-URxvt*font:				-misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#URxvt*font:				-misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #URxvt*font:            xft:DejaVu Sans:size=8
-URxvt*urlLauncher:         chromium  
+URxvt*font :           	xft:terminus:size=9
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:     /usr/bin/chromium  
+URxvt.matcher.button:   1
+URxvt.keysym.C-Delete:  perl:matcher:last
+URxvt.keysym.M-Delete:  perl:matcher:list
+
 URxvt*scrollBar:        false
 #URxvt*scrollBar_right:        true
 #URxvt*scrollColor:        #000000
-
-
+#URxvt.transparent:	true
+#URxvt.shading:	100
