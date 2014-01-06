@@ -6,6 +6,7 @@ call vundle#rc()
 
 "let Vundle manage Vundle
 Bundle 'gmarik/vundle'
+Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'lilydjwg/colorizer'
 
@@ -34,6 +35,8 @@ let g:airline_theme='lucius'
 Bundle 'bling/vim-bufferline'
 let g:airline#extensions#bufferline#enabled = 1
 
+Bundle 'edkolev/tmuxline.vim'
+
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode='c'
 
@@ -46,8 +49,14 @@ let g:Tex_ViewRule_pdf = 'mupdf'
 
 Bundle 'tpope/vim-fugitive'
 
+Bundle 'mbbill/undotree'
+nmap <C-k> :UndotreeToggle<CR>
+
 Bundle 'majutsushi/tagbar'
 nmap <C-m> :TagbarToggle<CR>
+
+"adding sudo power when necessary
+command W w !sudo tee % > /dev/null
 
 filetype plugin indent on     " required!
 filetype plugin on
@@ -90,7 +99,7 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -160,6 +169,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 "using the mouse
 set mouse=a
+map <2-LeftMouse> za
 
 "using semicolon to use the command line
 nnoremap ; :
