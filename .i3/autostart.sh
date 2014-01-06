@@ -14,7 +14,16 @@ xset dpms 300 600 900 &
 xbacklight -set 60 &
 
 # OSD
-#dunst &
+dunst &
+
+#Notify-send when battery is low
+battery-notification.sh &
+
+#starting cmus
+urxvt -name scratchpad -e cmus &
+
+#set up a tmux server, hosting a vim server!
+
 
 # background colour
 #xsetroot -solid '#101010' &

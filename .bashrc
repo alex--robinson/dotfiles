@@ -17,6 +17,33 @@
 #IRAF?
 #export PATH=$PATH:$/iraf/
 
+# TMUX
+#if which tmux 2>&1 >/dev/null; then
+#    #if not inside a tmux session, and if no session is started, start a new session
+#    test -z "$TMUX" && (tmux attach || tmux new-session)
+#fi
+
+#colors for use in TTY
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0222222" #black
+    echo -en "\e]P8222222" #darkgrey
+    echo -en "\e]P19f6767" #darkred
+    echo -en "\e]P99f6767" #red
+    echo -en "\e]P292ac68" #darkgreen
+    echo -en "\e]PA92ac68" #green
+    echo -en "\e]P3d0d293" #brown
+    echo -en "\e]PBd0d293" #yellow
+    echo -en "\e]P49aacc3" #darkblue
+    echo -en "\e]PC9aacc3" #blue
+    echo -en "\e]P5bb77a4" #darkmagenta
+    echo -en "\e]PDbb77a4" #magenta
+    echo -en "\e]P677bbb5" #darkcyan
+    echo -en "\e]PE77bbb5" #cyan
+    echo -en "\e]P7777777" #lightgrey
+    echo -en "\e]PF777777" #white
+    clear #for background artifacting
+fi
+
 #my personal bin
 export PATH=$PATH:$HOME/bin
 
@@ -51,7 +78,7 @@ alias pacman='pacman --color=auto'
 eval $(dircolors -b)
 
 #auto vlc ncurses
-alias vlc='vlc -I ncurses'
+#alias vlc='vlc -I ncurses'
 
 #making feh a little nicer
 alias feh='feh --scale-down'
@@ -67,7 +94,7 @@ alias dual='xrandr --output $_HDMI --auto --left-of LVDS1 --output LVDS1 --auto 
 alias light_monitor='xrandr --output $_HDMI --brightness 1'
 alias dark_monitor='xrandr --output $_HDMI --brightness 0.5'
 
-#RPi! 
+#RPi!
 alias pilogin='ssh -X alex@raspberrypi'
 alias pimount='sshfs alex@raspberrypi: /home/alex/pi'
 #for RPi access when it isn't local. Uses my dnsdynamic account
@@ -80,16 +107,6 @@ alias dougal='sudo pon ImperialVPN && sleep 6 && sudo ip route add 155.198.3.130
 
 #some network gubbins
 #alias getips='sudo arp-scan --interface=wlan0 --localnet'
-
-##
-##some programs
-
-##minecraft
-alias minecraft='java -Xmx1024M -Xms512M -cp -jar Programs/Minecraft/minecraft.jar'
-
-##dwarves!!!
-alias dwarf='~/Programs/df_linux/df'
-
 
 ##
 ##other useful bits and bobs

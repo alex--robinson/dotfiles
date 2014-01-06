@@ -4,37 +4,42 @@ out_to_x	  no
 update_interval	  0.5
 total_run_times	  0
 short_units	  yes
+use_spacer left
+pad_percents 3
 
 override_utf8_locale yes
 
 TEXT
 ,[
 #Finds out if cmus is running. If it is, it provides 1) the current artist and 2) the current track. If cmus isn't running it outputs "Not Running"
-  {"full_text": "[${exec sh $HOME/.i3/cmusconk.sh}]", "color":"\#d0d293"},
-#Mute?
-  {"full_text": "${exec amixer get Master | grep -o "\[o[n,f][f]*\]"}", "color":"\#9aacc3"},
+  {"full_text": "${exec sh $HOME/.i3/cmusconk.sh}", "color":"\#d0d293"},\
 #Finds current volume. May need modified depending on your setup
-  {"full_text": "♪ ${exec amixer get Master | grep -o "\[.*%\]"}", "color":"\#9aacc3"},
+  {"full_text": "♬ ${exec amixer get Master | grep -o "\[.*%\]" | tr -d '[]'}", "color":"\#9aacc3"},\
+#Mute?
+  {"full_text": "${exec amixer get Master | grep -o "\[o[n,f][f]*\]" | tr -d '[]' }", "color":"\#9aacc3"},\
 #Name of wireless network
-  {"full_text": "[${wireless_essid wlp2s0}]", "color":"\#9f6767"},
+  {"full_text": "${wireless_essid wlp2s0}", "color":"\#9f6767"},\
 #Shows uploadspeed
-  {"full_text": "▲ [${upspeed wlp2s0}]", "color":"\#9f6767"},
+  #{"full_text": "▲ ${upspeed wlp2s0}", "color":"\#9f6767"},\
 #Shows downloadspeed
-  {"full_text": "▼ [${downspeed wlp2s0}]", "color":"\#9f6767"},
+  #{"full_text": "▼ ${downspeed wlp2s0}", "color":"\#9f6767"},\
+#Wireless quality
+  {"full_text": "${wireless_link_qual wlp2s0}%", "color":"\#9f6767"},\
 #free space on /
-  {"full_text": "/ [${fs_free /}]", "color":"\#504339"},
+  {"full_text": "/ ${fs_free /}", "color":"\#504339"},\
 #free space in /home
-  {"full_text": "/home [${fs_free /home}]", "color":"\#504339"},
-#Shows current memory usage with a bar
-  {"full_text": "|| [${memperc}%]", "color":"\#B58900"},
-#Shows current CPU usage with a bar
-  {"full_text": "■ [${cpu}%]", "color":"\#77bbb5"},
+  {"full_text": "/home ${fs_free /home}", "color":"\#504339"},\
+#Shows current memory usage
+  {"full_text": "||${memperc}%", "color":"\#B58900"},\
+#Shows current CPU usage
+  {"full_text": "■${cpu}%", "color":"\#77bbb5"},\
 #Shows battery
-  {"full_text": "⚡ [$battery_short]", "color": "\#bb77a4"},
-  #{"full_text": "B [$battery_short]", "color": "\#bb77a4"},
+  {"full_text": "⚡ $battery_short", "color": "\#bb77a4"},\
+  #{"full_text": "B $battery_short", "color": "\#bb77a4"},\
 #Shows uptime
-#  {"full_text": "↑ [${uptime}]","color": "\#bb77a4"},
+#  {"full_text": "↑ ${uptime}","color": "\#bb77a4"},\
 #Shows time
-  {"full_text": "[${time %a %d %b} ${time %H:%M:%S}]","color": "\#92ac68"}
+  {"full_text": "${time %a %d %b} ${time %H:%M:%S}","color": "\#92ac68"}\
 ]
+
 
