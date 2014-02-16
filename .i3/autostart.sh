@@ -20,10 +20,11 @@ dunst &
 battery-notification.sh &
 
 #starting cmus
-urxvt -name scratchpad -e cmus &
+urxvtc -name cmus -e cmus &
+urxvtc -name newsbeuter -e newsbeuter &
 
-#set up a tmux server, hosting a vim server!
-
+#auto-hide the mouse
+unclutter &
 
 # background colour
 #xsetroot -solid '#101010' &

@@ -1,24 +1,23 @@
+
+" Vundle
 set nocompatible
 filetype off                   " required!
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-"let Vundle manage Vundle
+filetype plugin indent on     " required!
+filetype plugin on
 Bundle 'gmarik/vundle'
+
 Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'lilydjwg/colorizer'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'chrisbra/csv.vim'
 
 Bundle 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-Bundle 'scrooloose/syntastic'
-
-Bundle 'scrooloose/nerdcommenter'
-
-Bundle 'chrisbra/csv.vim'
 
 Bundle 'bling/vim-airline'
 let g:airline#extensions#csv#enabled = 1
@@ -35,7 +34,7 @@ let g:airline_theme='lucius'
 Bundle 'bling/vim-bufferline'
 let g:airline#extensions#bufferline#enabled = 1
 
-Bundle 'edkolev/tmuxline.vim'
+"Bundle 'edkolev/tmuxline.vim'
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode='c'
@@ -55,24 +54,10 @@ nmap <C-k> :UndotreeToggle<CR>
 Bundle 'majutsushi/tagbar'
 nmap <C-m> :TagbarToggle<CR>
 
+Bundle 'tpope/vim-surround'
+
 "adding sudo power when necessary
 command W w !sudo tee % > /dev/null
-
-filetype plugin indent on     " required!
-filetype plugin on
-
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache
-"                        first) for foo
-" :BundleClean(!)      - confirm(or
-"                         auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for
-"                           FAQ
-" NOTE: comments after Bundle command are not
-"                            allowed.
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7

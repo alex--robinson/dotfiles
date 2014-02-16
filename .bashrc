@@ -91,8 +91,11 @@ _HDMI=$( xrandr  | sed -n 's/^\(HDMI.\).*/\1/pg')
 alias laptop='xrandr --output LVDS1 --auto --output $_HDMI --off'
 alias monitor='xrandr --output LVDS1 --off --output $_HDMI --auto'
 alias dual='xrandr --output $_HDMI --auto --left-of LVDS1 --output LVDS1 --auto --pos 1920x700 '
+alias same='xrandr --output $_HDMI --auto --same-as LVDS1'
 alias light_monitor='xrandr --output $_HDMI --brightness 1'
 alias dark_monitor='xrandr --output $_HDMI --brightness 0.5'
+alias movie='xset -dpms; xset s off'
+alias unmovie='xset +dpms; xset s on'
 
 #RPi!
 alias pilogin='ssh -X alex@raspberrypi'

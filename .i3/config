@@ -28,7 +28,7 @@ set $white2 #9a875f
 
 # Set window borders
 #class                          border  bg      text    indicator
-client.focused                  $black2 $red1   #D8C3B6 $magenta2
+client.focused                  $black2 #92ac68   #D8C3B6 $magenta2
 client.focused_inactive         $black1 $black1 $white2 $cyan2
 client.unfocused                $black1 $black1 $white2 $cyan2
 client.urgent                   $red2   $red2   #FFFFFF $red2
@@ -37,7 +37,8 @@ client.urgent                   $red2   $red2   #FFFFFF $red2
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -96,8 +97,10 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # scratchpad shiz
-bindsym $mod+Shift+o move scratchpad
-bindsym $mod+o scratchpad show
+bindsym $mod+i scratchpad show
+bindsym $mod+Shift+i move scratchpad
+bindsym $mod+o [instance="cmus"] scratchpad show
+bindsym $mod+p [instance="newsbeuter"] scratchpad show
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -169,19 +172,22 @@ bindsym $mod+MOD1+Up exec cmus-remote -s
 bindsym $mod+MOD1+Left exec cmus-remote -C player-prev
 
 #open ranger file-Manager
-bindsym $mod+m exec /usr/bin/urxvt -e /usr/bin/ranger
+bindsym $mod+m exec /usr/bin/urxvtc -e /usr/bin/ranger
 
 #open Cmus music player on Scratchpad at start
-bindsym $mod+c exec /usr/bin/urxvt -e /usr/bin/cmus
-for_window [class="^URxvt$" instance="scratchpad"] move scratchpad
+bindsym $mod+c exec /usr/bin/urxvtc -e /usr/bin/cmus
+for_window [class="^URxvt$" instance="cmus"] move scratchpad
+for_window [class="^URxvt$" instance="newsbeuter"] move scratchpad
+
+for_window [class="^URxvt$" instance="dwb"] floating enable
 
 #lock with colour (now using i3lock-wrapper instead)
 #bindsym $mod+Shift+x exec /usr/bin/i3lock -c 202020
 
 #open chromium
-bindsym $mod+i exec chromium
+#bindsym $mod+i exec chromium
 
-bindsym $mod+t exec urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+bindsym $mod+t exec urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

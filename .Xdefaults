@@ -67,7 +67,7 @@
 URxvt*geometry:         112x22
 URxvt*font :           	xft:terminus:size=9
 URxvt.perl-ext-common:  default,matcher
-URxvt.url-launcher:     /usr/bin/chromium
+URxvt.url-launcher:     /usr/bin/dwb
 URxvt.matcher.button:   1
 URxvt.keysym.C-Delete:  perl:matcher:last
 URxvt.keysym.M-Delete:  perl:matcher:list

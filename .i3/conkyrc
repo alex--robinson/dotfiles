@@ -11,8 +11,8 @@ override_utf8_locale yes
 
 TEXT
 ,[
-#Finds out if cmus is running. If it is, it provides 1) the current artist and 2) the current track. If cmus isn't running it outputs "Not Running"
-  {"full_text": "${exec sh $HOME/.i3/cmusconk.sh}", "color":"\#d0d293"},\
+#Finds out if cmus is running. If it is, it provides 1) the current artist and 2) the current track. If cmus isn't running it outputs "-"
+  {"full_text": "${exec sh $HOME/.i3/cmusconk.sh | tr \" \' }", "color":"\#d0d293"},\
 #Finds current volume. May need modified depending on your setup
   {"full_text": "♬ ${exec amixer get Master | grep -o "\[.*%\]" | tr -d '[]'}", "color":"\#9aacc3"},\
 #Mute?
@@ -26,9 +26,9 @@ TEXT
 #Wireless quality
   {"full_text": "${wireless_link_qual wlp2s0}%", "color":"\#9f6767"},\
 #free space on /
-  {"full_text": "/ ${fs_free /}", "color":"\#504339"},\
+  {"full_text": "/ ${fs_free /}", "color":"\#6c6c9c"},\
 #free space in /home
-  {"full_text": "/home ${fs_free /home}", "color":"\#504339"},\
+  {"full_text": "/home ${fs_free /home}", "color":"\#6c6c9c"},\
 #Shows current memory usage
   {"full_text": "||${memperc}%", "color":"\#B58900"},\
 #Shows current CPU usage
