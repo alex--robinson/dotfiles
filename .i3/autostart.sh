@@ -28,5 +28,6 @@ unclutter &
 
 # background colour
 #xsetroot -solid '#101010' &
-~/.i3/wallpaper.sh
+#~/.i3/wallpaper.sh
+xsetroot -bg '#151515' -fg '#252525' -mod 4 4
 
