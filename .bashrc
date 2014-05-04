@@ -63,7 +63,7 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-# some options
+# extended globbing
 shopt -s extglob
 
 #vim, rather than emacs, key control
@@ -71,7 +71,7 @@ set -o vi
 export EDITOR=vim
 
 #colour
-alias ls='ls -h --color=auto'
+alias ls='ls -h --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 alias pacman='pacman --color=auto'
 
@@ -85,17 +85,6 @@ alias feh='feh --scale-down'
 
 #the prompt
 export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
-
-#monitors!
-_HDMI=$( xrandr  | sed -n 's/^\(HDMI.\).*/\1/pg')
-alias laptop='xrandr --output LVDS1 --auto --output $_HDMI --off'
-alias monitor='xrandr --output LVDS1 --off --output $_HDMI --auto'
-alias dual='xrandr --output $_HDMI --auto --left-of LVDS1 --output LVDS1 --auto --pos 1920x700 '
-alias same='xrandr --output $_HDMI --auto --same-as LVDS1'
-alias light_monitor='xrandr --output $_HDMI --brightness 1'
-alias dark_monitor='xrandr --output $_HDMI --brightness 0.5'
-alias movie='xset -dpms; xset s off'
-alias unmovie='xset +dpms; xset s on'
 
 #RPi!
 alias pilogin='ssh -X alex@raspberrypi'
@@ -113,6 +102,29 @@ alias dougal='sudo pon ImperialVPN && sleep 6 && sudo ip route add 155.198.3.130
 
 ##
 ##other useful bits and bobs
+
+###	Handy Extract Program
+###     found at http://dotfiles.org/~blackbook/.bashrc
+extract () {
+     if [ -f $1 ] ; then
+         case $1 in
+             *.tar.bz2)   tar xvjf $1    ;;
+             *.tar.gz)    tar xvzf $1    ;;
+             *.bz2)       bunzip2 $1     ;;
+             *.rar)       unrar x $1     ;;
+             *.gz)        gunzip $1      ;;
+             *.tar)       tar xvf $1     ;;
+             *.tbz2)      tar xvjf $1    ;;
+             *.tgz)       tar xvzf $1    ;;
+             *.zip)       unzip $1       ;;
+             *.Z)         uncompress $1  ;;
+             *.7z)        7z x $1        ;;
+             *)           echo "'$1' cannot be extracted via >extract<" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
 
 ## get rid of command not found ##
 alias cd..='cd ..'

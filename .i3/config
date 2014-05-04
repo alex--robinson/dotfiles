@@ -7,16 +7,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Colors! (ME)
 set $blue #005588
-set $gray1 #4a4a4a
-set $gray2 #333333
 set $red1 #8c664c
 set $red2 #9f7155
-set $blue1 #646a6d
-set $blue2 #777e82
-set $green1 #746c48
-set $green2 #8f8558
-set $yellow1 #bfba92
-set $yellow2 #e0daac
 set $black1 #332d29
 set $black2 #817267
 set $magenta1 #766872
@@ -44,7 +36,7 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b -l 20 -w 200  -x 5 -y 5 -dim '0' -dc '#92ac68' -nb '#556d70' -sb '#92ac68' -sf '#222222' -p '>>>'
+bindsym $mod+d exec dmenu_run -b -l 20 -w 200  -x 5 -y 5 -dim '0' -dc '#92ac68' -nb '#556d70' -sb '#92ac68' -sf '#222222' -p '>>>' -nf '#ffffff' -sf '#ffffff'
 
 # change focus
 bindsym $mod+h focus left
@@ -99,8 +91,7 @@ bindsym $mod+z focus child
 # scratchpad shiz
 bindsym $mod+i scratchpad show
 bindsym $mod+Shift+i move scratchpad
-bindsym $mod+o [instance="cmus"] scratchpad show
-bindsym $mod+p [instance="newsbeuter"] scratchpad show
+#bindsym $mod+o [instance="cmus"] scratchpad show
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -151,7 +142,7 @@ workspace 8 output HDMI1
 # back and forth
 workspace_auto_back_and_forth yes
 
-# volume stuff, (uses pulseaudio_ctl??)
+# volume stuff
 bindsym $mod+F12 exec amixer -q set Master 5%+
 bindsym $mod+F11 exec amixer -q set Master 5%-
 bindsym $mod+F10 exec amixer -q set Master toggle
@@ -166,18 +157,26 @@ bindsym $mod+F6 exec xbacklight -inc 10
 bindsym $mod+F9 exec ~/bin/trackpad-toggle.sh
 
 # cmus controls
-bindsym $mod+MOD1+Down exec cmus-remote -u
-bindsym $mod+MOD1+Right exec cmus-remote -n
-bindsym $mod+MOD1+Up exec cmus-remote -s
-bindsym $mod+MOD1+Left exec cmus-remote -C player-prev
+#bindsym $mod+MOD1+Down exec cmus-remote -u
+#bindsym $mod+MOD1+Right exec cmus-remote -n
+#bindsym $mod+MOD1+Up exec cmus-remote -s
+#bindsym $mod+MOD1+Left exec cmus-remote -C player-prev
+
+#mpd ncmpcpp controls
+bindsym $mod+MOD1+Down exec ncmpcpp toggle
+bindsym $mod+MOD1+Right exec ncmpcpp next
+bindsym $mod+MOD1+Up exec ncmpcpp stop
+bindsym $mod+MOD1+Left exec ncmpcpp prev
+
+bindsym $mod+o exec urxvtc -name ncmpcpp -g 128x36 -e ncmpcpp -s media-library &
+for_window [class="^URxvt$" instance="ncmpcpp"] floating enable
 
 #open ranger file-Manager
 bindsym $mod+m exec /usr/bin/urxvtc -e /usr/bin/ranger
 
 #open Cmus music player on Scratchpad at start
-bindsym $mod+c exec /usr/bin/urxvtc -e /usr/bin/cmus
-for_window [class="^URxvt$" instance="cmus"] move scratchpad
-for_window [class="^URxvt$" instance="newsbeuter"] move scratchpad
+#bindsym $mod+c exec /usr/bin/urxvtc -e /usr/bin/cmus
+#for_window [class="^URxvt$" instance="cmus"] move scratchpad
 
 for_window [class="^URxvt$" instance="dwb"] floating enable
 
@@ -232,7 +231,7 @@ bar {
         font pango:terminus 12px
         colors {
                 #statusline #AAAAAA
-                background #181512
+                background #151515
                                   #border background text
                 focused_workspace $black2 $white2 $black1
                 active_workspace $black2 $white1 $white2
@@ -250,7 +249,7 @@ bar {
         status_command ~/.i3/conky
         colors {
                 #statusline #AAAAAA
-                background #181512
+                background #151515
                 focused_workspace $black2 $white2 $black1
                 active_workspace $black2 $white1 $white2
                 inactive_workspace $black2 $black1 $white2
@@ -275,8 +274,26 @@ mode "$mode_system" {
 }
 bindsym $mod+Pause mode "$mode_system"
 
+set $mode_monitors Monitors (L) laptop, (M) monitor, (D) dual, (s) same, (b) bright, (d) dark, (m) movie, (u) unmovie
+mode "$mode_monitors" {
+    bindsym Shift+l exec --no-startup-id ~/bin/monitor_management.sh laptop, mode "default"
+    bindsym Shift+m exec --no-startup-id ~/bin/monitor_management.sh monitor, mode "default"
+    bindsym Shift+d exec --no-startup-id ~/bin/monitor_management.sh dual, mode "default"
+    bindsym s exec --no-startup-id ~/bin/monitor_management.sh same, mode "default"
+    bindsym b exec --no-startup-id ~/bin/monitor_management.sh light_monitor, mode "default"
+    bindsym d exec --no-startup-id ~/bin/monitor_management.sh dark_monitor, mode "default"
+    bindsym m exec --no-startup-id ~/bin/monitor_management.sh movie, mode "default"
+    bindsym u exec --no-startup-id ~/bin/monitor_management.sh unmovie, mode "default"
+
+    # back to normal
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym q mode "default"
+}
+bindsym $mod+F8 mode "$mode_monitors"
+
 # window inset?
-new_window pixel 1
+new_window pixel 2
 
 # mouse focus
 focus_follows_mouse no
