@@ -47,6 +47,10 @@ let g:Tex_ViewRule_pdf = 'mupdf'
 "imap <C-space> <Plug>IMAP_JumpForward
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+
+Bundle 'lukerandall/haskellmode-vim'
+let g:haddock_browser="/usr/bin/dwb"
 
 Bundle 'mbbill/undotree'
 nmap <C-k> :UndotreeToggle<CR>
@@ -54,7 +58,15 @@ nmap <C-k> :UndotreeToggle<CR>
 Bundle 'majutsushi/tagbar'
 nmap <C-m> :TagbarToggle<CR>
 
-Bundle 'tpope/vim-surround'
+Bundle 'altercation/vim-colors-solarized'
+" colorscheme
+let g:zenburn_high_Contrast=1
+colorscheme zenburn
+syntax enable
+"set background=light
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
 
 "adding sudo power when necessary
 command W w !sudo tee % > /dev/null
@@ -113,10 +125,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" colorscheme
-let g:zenburn_high_Contrast=1
-colorscheme zenburn
-syntax on
 
 "hi Normal ctermbg=NONE
 
@@ -125,7 +133,7 @@ map <Leader>k :bnext<cr>
 map <Leader>j :bprev<cr>
 
 " line numbers
-set number
+set relativenumber
 
 " long line marker
 set colorcolumn=80

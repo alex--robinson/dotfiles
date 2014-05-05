@@ -1,66 +1,5 @@
-!------------------------------------------------------------------------------
-! c o l o r -  s e t t i n g s
+! Cursor
 !
-*background: #222222
-*foreground: #777777
-
-! Zenburn-y
-! 0: black
-!!*color0:  #222222
-!!*color8:  #222222
-*color0:  #222222
-*color8:  #000000
-! 1: red
-*color1:  #9f6767
-*color9:  #9f6767
-! 2: green
-*color2:  #92ac68
-*color10: #92ac68
-! 3: yellow
-*color3:  #d0d293
-*color11: #d0d293
-! 4: blue
-*color4:  #9aacc3
-*color12: #9aacc3
-! 5: magenta
-*color5:  #bb77a4
-*color13: #bb77a4
-! 6: cyan
-*color6:  #77bbb5
-*color14: #77bbb5
-! 7: white
-*color7:  #777777
-*color15: #777777
-
-!!Gslob nature-suede
-!URxvt*background:       #170F0D
-!URxvt*foreground:       #746C48
-!
-!URxvt*color0:           #392925
-!URxvt*color8:           #544B2E
-!
-!URxvt*color1:           #98724C
-!URxvt*color9:           #AF652F
-!
-!URxvt*color2:           #908F32
-!URxvt*color10:          #C3C13D
-!
-!URxvt*color3:           #AA964C
-!URxvt*color11:          #C8B55B
-!
-!URxvt*color4:           #7B854E
-!URxvt*color12:          #70A16C
-!
-!URxvt*color5:           #6B5644
-!URxvt*color13:          #98724C
-!
-!URxvt*color6:           #5C5142
-!URxvt*color14:          #778725
-!
-!URxvt*color7:           #C8B55B
-!URxvt*color15:          #E4DC8C
-
-
 !------------------------------------------------------------------------------
 ! u r x v t
 
@@ -74,7 +13,156 @@ URxvt.keysym.M-Delete:  perl:matcher:list
 URxvt.colorUL:          #468284
 
 URxvt*scrollBar:        false
-#URxvt*scrollBar_right:        true
-#URxvt*scrollColor:        #000000
-#URxvt.transparent:	true
-#URxvt.shading:	100
+!URxvt*scrollstyle:    plain
+!#URxvt*scrollBar_right:        true
+!#URxvt*scrollColor:        #000000
+!#URxvt.transparent:	true
+!#URxvt.shading:	100
+
+!!------------------------------------------------------------------------------
+! c o l o r -  s e t t i n g s
+!
+!Choose a scheme!
+!#define solarized_dark
+!#define solarized_light
+#define zenburn
+!#define erosion
+
+#ifdef solarized_dark
+! Common
+#define COLOR_3        #b58900
+#define COLOR_9        #cb4b16
+#define COLOR_1        #dc322f
+#define COLOR_5       #d33682
+#define COLOR_13        #6c71c4
+#define COLOR_4         #268bd2
+#define COLOR_6         #2aa198
+#define COLOR_2         #859900
+! Dark
+#define COLOR_8        #002b36
+#define COLOR_0        #073642
+#define COLOR_10        #586e75
+#define COLOR_11        #657b83
+#define COLOR_12         #839496
+#define COLOR_14         #93a1a1
+#define COLOR_7         #eee8d5
+#define COLOR_15         #fdf6e3
+#define BACKGROUND     #002b36
+#define FOREGROUND     #839496
+#define FADE           #002b36
+#define CURSOR         #93a1a1
+#define POINTERBACK    #586e75
+#define POINTERFORE    #93a1a1
+#endif
+
+#ifdef solarized_light
+! Common
+#define COLOR_3        #b58900
+#define COLOR_9        #cb4b16
+#define COLOR_1        #dc322f
+#define COLOR_5       #d33682
+#define COLOR_13        #6c71c4
+#define COLOR_4         #268bd2
+#define COLOR_6         #2aa198
+#define COLOR_2         #859900
+! Light
+!#define COLOR_8        #fdf6e3
+#define COLOR_8        #ffffd7
+#define COLOR_0         #eee8d5
+#define COLOR_10        #93a1a1
+#define COLOR_11        #839496
+#define COLOR_12         #657b83
+#define COLOR_14         #586e75
+#define COLOR_7          #073642
+#define COLOR_15         #002b36
+#define BACKGROUND     #ffffd7
+#define FOREGROUND     #657b83
+#define FADE           #fdf6e3
+#define CURSOR         #586e75
+#define POINTERBACK    #93a1a1
+#define POINTERFORE   #586e75
+#endif
+
+
+#ifdef zenburn
+!*color0:  #222222
+!*color8:  #222222
+#define COLOR_0  #222222
+#define COLOR_8  #000000
+#define COLOR_1  #9f6767
+#define COLOR_9  #9f6767
+#define COLOR_2  #92ac68
+#define COLOR_10 #92ac68
+#define COLOR_3  #d0d293
+#define COLOR_11 #d0d293
+#define COLOR_4  #9aacc3
+#define COLOR_12 #9aacc3
+#define COLOR_5  #bb77a4
+#define COLOR_13 #bb77a4
+#define COLOR_6  #77bbb5
+#define COLOR_14 #77bbb5
+#define COLOR_7  #777777
+#define COLOR_15 #777777
+#define FADE #000000
+#define BACKGROUND #222222
+#define FOREGROUND #777777
+#define CURSOR #777777
+#endif
+
+#ifdef erosion
+#define COLOR_0 #332d29
+#define COLOR_8 #817267
+#define COLOR_1 #8c644c
+#define COLOR_9 #9f7155
+#define COLOR_2  #746C48
+#define COLOR_10 #8F8558
+#define COLOR_3 #bfba92
+#define COLOR_11 #E0DAAC
+#define COLOR_4 #646a6d
+#define COLOR_12 #777E82
+!!urxvt*color5: #6d6871
+!!urxvt*color13: #756f7b
+#define COLOR_5 #766782
+#define COLOR_13 #897796
+!!urxvt*color6: #3b484a
+!!urxvt*color14: #444d4e
+#define COLOR_6 #4B5C5E
+#define COLOR_14 #556D70
+!! white dark/light
+#define COLOR_7 #504339
+#define COLOR_15 #9a875f
+#define FADE #000000
+#define BACKGROUND #181512
+#define FOREGROUND #D6C3B6
+!!#define *foreground: #ffdcc4
+#define CURSOR #93a1a1
+!#define *colorIT: #8c644c
+!#define *colorUL: #646a6d
+!#define *colorBD: #746C48
+#endif
+
+*background:              BACKGROUND
+*foreground:              FOREGROUND
+*fading:                  40
+*fadeColor:               FADE
+*cursorColor:             CURSOR
+*pointerColorBackground:  POINTERBACK
+*pointerColorForeground:  POINTERFORE
+*color0:                  COLOR_0
+*color1:                  COLOR_1
+*color2:                  COLOR_2
+*color3:                  COLOR_3
+*color4:                  COLOR_4
+*color5:                  COLOR_5
+*color6:                  COLOR_6
+*color7:                  COLOR_7
+*color8:                  COLOR_8
+*color9:                  COLOR_9
+*color10:                 COLOR_10
+*color11:                 COLOR_11
+*color12:                 COLOR_12
+*color13:                 COLOR_13
+*color14:                 COLOR_14
+*color15:                 COLOR_15
+
+

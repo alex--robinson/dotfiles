@@ -6,13 +6,18 @@ total_run_times	  0
 short_units	  yes
 use_spacer left
 pad_percents 3
+text_buffer_size 2048
 
 override_utf8_locale yes
 
 TEXT
 ,[
 #Finds out if cmus is running. If it is, it provides 1) the current artist and 2) the current track. If cmus isn't running it outputs "-"
-  {"full_text": "${exec sh $HOME/.i3/cmusconk.sh | tr \" \' }", "color":"\#d0d293"},\
+#  {"full_text": "${exec sh $HOME/.i3/cmusconk.sh | tr \" \' }", "color":"\#d0d293"},\
+# MPD
+#{ "full_text" : ${if_mpd_playing} "${mpd_artist} - ${mpd_title}"${else}""${endif}, "color" : "\#d0d293"},\
+#{ "full_text" : ${if_mpd_playing} "${execp echo "\${mpd_artist} - \${mpd_title}" | tr \" \' }"${else}""${endif}, "color" : "\#d0d293"},
+  {"full_text": ${if_mpd_playing} "${exec ncmpcpp --now-playing "{%a -} %t" | tr \" \' }"${else}""${endif}, "color" : "\#d0d293"},\
 #Finds current volume. May need modified depending on your setup
   {"full_text": "♬ ${exec amixer get Master | grep -o "\[.*%\]" | tr -d '[]'}", "color":"\#9aacc3"},\
 #Mute?
@@ -41,5 +46,4 @@ TEXT
 #Shows time
   {"full_text": "${time %a %d %b} ${time %H:%M:%S}","color": "\#92ac68"}\
 ]
-
 

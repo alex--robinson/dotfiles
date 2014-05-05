@@ -20,8 +20,12 @@ dunst &
 battery-notification.sh &
 
 #starting cmus
-urxvtc -name cmus -e cmus &
-urxvtc -name newsbeuter -e newsbeuter &
+#urxvtc -name cmus -e cmus &
+
+#mpd
+#[ ! -s ~/.config/mpd/pid ] && mpd
+mpd
+#urxvtc -name ncmpcpp -e ncmpcpp &
 
 #auto-hide the mouse
 unclutter &
