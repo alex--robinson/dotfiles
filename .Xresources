@@ -128,7 +128,6 @@ URxvt*scrollBar:        false
 !!urxvt*color14: #444d4e
 #define COLOR_6 #4B5C5E
 #define COLOR_14 #556D70
-!! white dark/light
 #define COLOR_7 #504339
 #define COLOR_15 #9a875f
 #define FADE #000000
