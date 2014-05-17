@@ -58,14 +58,14 @@ nmap <C-k> :UndotreeToggle<CR>
 Bundle 'majutsushi/tagbar'
 nmap <C-m> :TagbarToggle<CR>
 
-Bundle 'altercation/vim-colors-solarized'
 " colorscheme
-let g:zenburn_high_Contrast=1
-colorscheme zenburn
-syntax enable
+Bundle 'altercation/vim-colors-solarized'
 "set background=light
 "let g:solarized_termcolors=256
 "colorscheme solarized
+let g:zenburn_high_Contrast=1
+colorscheme zenburn
+syntax enable
 
 
 "adding sudo power when necessary
@@ -81,7 +81,7 @@ set wildmenu
 set wildignore=*.o,*~,*.pyc
 
 "Always show current position
-set ruler
+"set ruler
 
 " Height of the command bar
 set cmdheight=2
@@ -124,6 +124,7 @@ set tm=500
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set splitbelow
 
 
 "hi Normal ctermbg=NONE
