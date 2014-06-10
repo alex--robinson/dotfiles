@@ -141,7 +141,7 @@ URxvt*scrollBar:        false
 
 *background:              BACKGROUND
 *foreground:              FOREGROUND
-*fading:                  40
+!*fading:                  40
 *fadeColor:               FADE
 *cursorColor:             CURSOR
 *pointerColorBackground:  POINTERBACK

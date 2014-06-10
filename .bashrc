@@ -66,6 +66,9 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # extended globbing
 shopt -s extglob
 
+# Preventing terminal scroll lock
+stty -ixon
+
 #vim, rather than emacs, key control
 set -o vi
 export EDITOR=vim
