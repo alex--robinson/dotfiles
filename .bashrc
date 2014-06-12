@@ -1,14 +1,4 @@
 export TERM=xterm-256color
-##some observatory stuff
-#alias obslogin='ssh -X obslogin2.unige.ch -l arobinso'
-#
-#alias obsftp='sftp arobinso@obslogin2.unige.ch'
-
-#replaced the chaps below by svn. These guys were probably outright dangerous!
-#alias obsdown='rsync -avz --progress -e ssh arobinso@obslogin2.unige.ch:sync/ /home/alex/sync'
-
-#alias obsup='rsync -avz --progress -e ssh /home/alex/sync/ arobinso@obslogin2.unige.ch:sync/'
-
 #lenstool
 #some global variables needed to be exported to get this chap to run...
 #export LENSTOOL_DIR=/usr/local/lenstool_v6.7.1/
@@ -91,6 +81,7 @@ alias feh='feh --scale-down'
 export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
 
 #RPi!
+# should probably use ~/.ssh/config for this...
 alias pilogin='ssh -X alex@raspberrypi'
 alias pimount='sshfs alex@raspberrypi: /home/alex/pi'
 #for RPi access when it isn't local. Uses my dnsdynamic account
