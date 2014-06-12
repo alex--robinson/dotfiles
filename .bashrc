@@ -1,3 +1,4 @@
+export TERM=xterm-256color
 ##some observatory stuff
 #alias obslogin='ssh -X obslogin2.unige.ch -l arobinso'
 #
