@@ -126,6 +126,9 @@ set shiftwidth=4
 set expandtab
 set splitbelow
 
+" armasm syntax highlighting
+let asmsyntax='armasm'
+let filetype_inc='armasm'
 
 "hi Normal ctermbg=NONE
 
