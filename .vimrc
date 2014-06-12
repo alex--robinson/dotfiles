@@ -2,7 +2,7 @@
 " Vundle
 set nocompatible
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 filetype plugin indent on     " required!
 filetype plugin on
