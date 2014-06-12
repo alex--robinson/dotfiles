@@ -6,20 +6,20 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 filetype plugin indent on     " required!
 filetype plugin on
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'ervandew/supertab'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'lilydjwg/colorizer'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'chrisbra/csv.vim'
+Plugin 'ervandew/supertab'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'lilydjwg/colorizer'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'chrisbra/csv.vim'
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline#extensions#csv#enabled = 1
 "removed section y for encoding from bottom right
 let g:airline#extensions#default#layout = [
@@ -31,35 +31,35 @@ let g:airline_right_sep=''
 let g:airline_theme='lucius'
 "let g:airline#extensions#tabline#enabled = 1
 "replaced with bufferline
-Bundle 'bling/vim-bufferline'
+Plugin 'bling/vim-bufferline'
 let g:airline#extensions#bufferline#enabled = 1
 
-"Bundle 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/tmuxline.vim'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode='c'
 
-Bundle 'vim-latex/vim-latex'
+Plugin 'vim-latex/vim-latex'
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf, aux'
 let g:Tex_ViewRule_pdf = 'mupdf'
 "imap <C-space> <Plug>IMAP_JumpForward
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 
-Bundle 'lukerandall/haskellmode-vim'
+Plugin 'lukerandall/haskellmode-vim'
 let g:haddock_browser="/usr/bin/dwb"
 
-Bundle 'mbbill/undotree'
+Plugin 'mbbill/undotree'
 nmap <C-k> :UndotreeToggle<CR>
 
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 nmap <C-m> :TagbarToggle<CR>
 
 " colorscheme
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 "set background=light
 "let g:solarized_termcolors=256
 "colorscheme solarized
