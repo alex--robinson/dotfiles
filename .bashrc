@@ -1,3 +1,4 @@
+#hello dad
 export TERM=xterm-256color
 #lenstool
 #some global variables needed to be exported to get this chap to run...
