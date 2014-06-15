@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 filetype plugin indent on     " required!
 filetype plugin on
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
@@ -55,14 +55,16 @@ let g:haddock_browser="/usr/bin/dwb"
 Plugin 'mbbill/undotree'
 nmap <C-k> :UndotreeToggle<CR>
 
-Plugin 'majutsushi/tagbar'
-nmap <C-m> :TagbarToggle<CR>
+"Plugin 'majutsushi/tagbar'
+"nmap <C-m> :TagbarToggle<CR>
 
 " colorscheme
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'altercation/vim-colors-solarized'
 "set background=light
 "let g:solarized_termcolors=256
 "colorscheme solarized
+"Plugin 'jnurmine/Zenburn'
 let g:zenburn_high_Contrast=1
 colorscheme zenburn
 syntax enable
