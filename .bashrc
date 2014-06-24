@@ -81,12 +81,6 @@ alias feh='feh --scale-down'
 #the prompt
 export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
 
-#RPi!
-# should probably use ~/.ssh/config for this...
-alias pilogin='ssh -X alex@raspberrypi'
-alias pimount='sshfs alex@raspberrypi: /home/alex/pi'
-#for RPi access when it isn't local. Uses my dnsdynamic account
-alias expilogin='ssh -X alex@pi.o.clock.dnsdynamic.net'
 
 #union server sftp, ensures vpn connection first
 #sleep is necessary to wait for connection to become effective
