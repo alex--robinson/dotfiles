@@ -14,6 +14,7 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'chrisbra/csv.vim'
+Plugin 'Align'
 
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
@@ -49,11 +50,11 @@ let g:Tex_ViewRule_pdf = 'mupdf'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
-Plugin 'lukerandall/haskellmode-vim'
-let g:haddock_browser="/usr/bin/dwb"
+"Plugin 'lukerandall/haskellmode-vim'
+"let g:haddock_browser="/usr/bin/dwb"
 
-Plugin 'mbbill/undotree'
-nmap <C-k> :UndotreeToggle<CR>
+"Plugin 'mbbill/undotree'
+"nmap <C-k> :UndotreeToggle<CR>
 
 "Plugin 'majutsushi/tagbar'
 "nmap <C-m> :TagbarToggle<CR>
@@ -140,6 +141,7 @@ map <Leader>j :bprev<cr>
 
 " line numbers
 set relativenumber
+set number
 
 " long line marker
 set colorcolumn=80
@@ -171,6 +173,7 @@ set mouse=a
 map <2-LeftMouse> za
 
 "using semicolon to use the command line
+"Do I really want to override ;?
 nnoremap ; :
 
 "easier window navigation
