@@ -36,7 +36,7 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b -l 20 -w 200  -x 5 -y 5 -dim '0' -dc '#92ac68' -nb '#556d70' -sb '#92ac68' -sf '#222222' -p '>>>' -nf '#ffffff' -sf '#ffffff'
+bindsym $mod+d exec dmenu_run -q -b -l 20 -w 200  -x 5 -y 5 -dim '0' -dc '#92ac68' -nb '#556d70' -sb '#92ac68' -sf '#222222' -p '>>>' -nf '#ffffff' -sf '#ffffff'
 
 # change focus
 bindsym $mod+h focus left
