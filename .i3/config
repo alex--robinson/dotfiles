@@ -231,7 +231,7 @@ bar {
         status_command i3status -c ~/.i3/i3status.conf
         font pango:terminus 12px
         colors {
-                #statusline #AAAAAA
+                statusline #AAAAAA
                 background #151515
                                   #border background text
                 focused_workspace $black2 $white2 $black1
@@ -247,7 +247,8 @@ bar {
         position top
         tray_output none
         font pango:terminus 12px
-        status_command ~/.i3/conky
+        #status_command ~/.i3/conky
+        status_command i3status -c ~/.i3/i3status.conf
         colors {
                 #statusline #AAAAAA
                 background #151515

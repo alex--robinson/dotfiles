@@ -18,9 +18,10 @@ TEXT
 #{ "full_text" : ${if_mpd_playing} "${mpd_artist} - ${mpd_title}"${else}""${endif}, "color" : "\#d0d293"},\
 #{ "full_text" : ${if_mpd_playing} "${execp echo "\${mpd_artist} - \${mpd_title}" | tr \" \' }"${else}""${endif}, "color" : "\#d0d293"},
   {"full_text": ${if_mpd_playing} "${exec ncmpcpp --now-playing "{%a -} %t" | tr \" \' }"${else}""${endif}, "color" : "\#d0d293"},\
-#Finds current volume. May need modified depending on your setup
+##Finds current volume. May need modified depending on your setup
   {"full_text": "♬ ${exec amixer get Master | grep -o "\[.*%\]" | tr -d '[]'}", "color":"\#9aacc3"},\
-#Mute?
+#  {"full_text":"♬ ${execpi 500 pactl list sinks | grep "Volume: " | cut -d " " -f4 }", "color":"\#9aacc3"},\
+##Mute?
   {"full_text": "${exec amixer get Master | grep -o "\[o[n,f][f]*\]" | tr -d '[]' }", "color":"\#9aacc3"},\
 #Name of wireless network
   {"full_text": "${wireless_essid wlp2s0}", "color":"\#9f6767"},\
