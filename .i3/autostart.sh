@@ -17,7 +17,7 @@ xbacklight -set 60 &
 dunst &
 
 #Notify-send when battery is low
-battery-notification.sh &
+#battery-notification.sh &
 
 #starting cmus
 #urxvtc -name cmus -e cmus &
