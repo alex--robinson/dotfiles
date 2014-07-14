@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+"Plugin 'itchyny/lightline.vim'
 Plugin 'bling/vim-airline'
 let g:airline#extensions#csv#enabled = 1
 "removed section y for encoding from bottom right
@@ -30,8 +31,8 @@ let g:airline#extensions#default#layout = [
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='lucius'
-"let g:airline#extensions#tabline#enabled = 1
 "replaced with bufferline
+""let g:airline#extensions#tabline#enabled = 1
 Plugin 'bling/vim-bufferline'
 let g:airline#extensions#bufferline#enabled = 1
 
@@ -171,6 +172,9 @@ nmap <silent> ,/ :nohlsearch<CR>
 "using the mouse
 set mouse=a
 map <2-LeftMouse> za
+
+"Disable ex mode
+map Q <nop>
 
 "using semicolon to use the command line
 "Do I really want to override ;?

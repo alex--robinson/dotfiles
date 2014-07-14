@@ -1,4 +1,3 @@
-#hello dad
 export TERM=xterm-256color
 #lenstool
 #some global variables needed to be exported to get this chap to run...
@@ -81,10 +80,13 @@ alias feh='feh --scale-down'
 #the prompt
 export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
 
+bind '"\t":menu-complete'
+bind "set show-all-if-ambiguous on"
+
 
 #union server sftp, ensures vpn connection first
 #sleep is necessary to wait for connection to become effective
-alias dougal='sudo pon ImperialVPN && sleep 6 && sudo ip route add 155.198.3.130 dev ppp0 && sftp ar1610@dougal.union.ic.ac.uk ; sudo poff ImperialVPN'
+#alias dougal='sudo pon ImperialVPN && sleep 6 && sudo ip route add 155.198.3.130 dev ppp0 && sftp ar1610@dougal.union.ic.ac.uk ; sudo poff ImperialVPN'
 #MAYBE I CAN USE curlftpfs INSTEAD TO MOUNT THE WEBSITE FOLDER NICELY
 
 #some network gubbins
