@@ -25,7 +25,7 @@ case "$1" in
         systemctl poweroff
         ;;
     *)
-        echo "Usage: $0 {lock"
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
 esac
 
 exit 0
