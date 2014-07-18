@@ -80,6 +80,7 @@ alias feh='feh --scale-down'
 #the prompt
 export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
 
+#changing auto-complete behaviour
 #bind '"\t":menu-complete'
 #bind "set show-all-if-ambiguous on"
 

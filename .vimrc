@@ -1,4 +1,3 @@
-set t_Co=256
 " Vundle
 set nocompatible
 filetype off                   " required!
@@ -55,7 +54,7 @@ Plugin 'tpope/vim-surround'
 "let g:haddock_browser="/usr/bin/dwb"
 
 "Plugin 'mbbill/undotree'
-"nmap <C-k> :UndotreeToggle<CR>
+"nmap <C-k> :UndotreeT"oggle<CR>
 
 "Plugin 'majutsushi/tagbar'
 "nmap <C-m> :TagbarToggle<CR>
@@ -69,11 +68,32 @@ Plugin 'flazz/vim-colorschemes'
 "Plugin 'jnurmine/Zenburn'
 let g:zenburn_high_Contrast=1
 colorscheme zenburn
+set t_Co=256
 syntax enable
 
+" New binds
 
+" swapping buffer more rapidly
+map <Leader>k :bnext<cr>
+map <Leader>j :bprev<cr>
+" word counting
+map <F3> :w !detex \| wc -w<CR>
+set pastetoggle=<F2>
+nmap <silent> ,/ :nohlsearch<CR>
+"Disable ex mode
+map Q <nop>
+"using semicolon to use the command line
+"Do I really want to override ;?
+nnoremap ; :
+"easier window navigation
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
 "adding sudo power when necessary
 command W w !sudo tee % > /dev/null
+
+" Other settings
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -84,7 +104,7 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-"Always show current position
+" Always show current position
 "set ruler
 
 " Height of the command bar
@@ -136,10 +156,6 @@ let filetype_inc='armasm'
 
 "hi Normal ctermbg=NONE
 
-" swapping buffer more rapidly
-map <Leader>k :bnext<cr>
-map <Leader>j :bprev<cr>
-
 " line numbers
 set relativenumber
 set number
@@ -149,11 +165,6 @@ set colorcolumn=80
 
 " highlight current line
 set cursorline
-
-" word counting
-map <F3> :w !detex \| wc -w<CR>
-" for vim-latexsuite
-filetype plugin on
 
 set grepprg=grep\ -nH\ $*
 
@@ -166,22 +177,7 @@ set laststatus=2
 
 set nobackup
 set noswapfile
-set pastetoggle=<F2>
-nmap <silent> ,/ :nohlsearch<CR>
 
 "using the mouse
 set mouse=a
 map <2-LeftMouse> za
-
-"Disable ex mode
-map Q <nop>
-
-"using semicolon to use the command line
-"Do I really want to override ;?
-nnoremap ; :
-
-"easier window navigation
-"map <C-h> <C-w>h
-"map <C-j> <C-w>j
-"map <C-k> <C-w>k
-"map <C-l> <C-w>l
