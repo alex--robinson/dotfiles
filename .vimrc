@@ -1,4 +1,4 @@
-
+set t_Co=256
 " Vundle
 set nocompatible
 filetype off                   " required!
@@ -11,11 +11,11 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'lilydjwg/colorizer'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'chrisbra/csv.vim'
 Plugin 'Align'
 
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -30,7 +30,7 @@ let g:airline#extensions#default#layout = [
       \ ]
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='lucius'
+let g:airline_theme='zenburn'
 "replaced with bufferline
 ""let g:airline#extensions#tabline#enabled = 1
 Plugin 'bling/vim-bufferline'
@@ -63,7 +63,7 @@ Plugin 'tpope/vim-surround'
 " colorscheme
 Plugin 'flazz/vim-colorschemes'
 "Plugin 'altercation/vim-colors-solarized'
-"set background=light
+"set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
 "Plugin 'jnurmine/Zenburn'
@@ -78,7 +78,7 @@ command W w !sudo tee % > /dev/null
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-" Turn on the WiLd menu
+" Turn on the Wild menu
 set wildmenu
 
 " Ignore compiled files

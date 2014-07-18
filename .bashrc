@@ -80,8 +80,8 @@ alias feh='feh --scale-down'
 #the prompt
 export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
 
-bind '"\t":menu-complete'
-bind "set show-all-if-ambiguous on"
+#bind '"\t":menu-complete'
+#bind "set show-all-if-ambiguous on"
 
 
 #union server sftp, ensures vpn connection first
