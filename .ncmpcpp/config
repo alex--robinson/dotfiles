@@ -1,0 +1,28 @@
+
+mpd_music_dir = "~/Music"
+
+visualizer_in_stereo = "yes"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30"
+visualizer_type = "spectrum" (spectrum/wave)
+#visualizer_look = "◆│"
+visualizer_look = "-|"
+screen_switcher_mode = "sequence: 2 -> 5"
+#startup_screen = "5"
+playlist_display_mode = "columns"
+display_bitrate = "yes"
+
+#empty_tag_color = COLOR
+#header_window_color = COLOR
+#volume_color = COLOR
+#state_line_color = COLOR
+#state_flags_color = COLOR
+main_window_color = "green"
+main_window_highlight_color = "cyan"
+progressbar_color ="green"
+#statusbar_color = COLOR
+#alternative_ui_separator_color = COLOR
+active_column_color = "green"
+#visualizer_color = COLOR
+#active_window_border = COLOR
