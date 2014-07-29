@@ -1,4 +1,4 @@
-export TERM=xterm-256color
+#export TERM=xterm-256color
 #lenstool
 #some global variables needed to be exported to get this chap to run...
 #export LENSTOOL_DIR=/usr/local/lenstool_v6.7.1/
