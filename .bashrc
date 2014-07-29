@@ -41,7 +41,7 @@ export PATH=$PATH:$HOME/bin
 #python startup file
 export PYTHONSTARTUP=$HOME/.pythonrc
 
-#setting up colour in less
+# setting up colour in less
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R'
 export PAGER='/usr/bin/less'
