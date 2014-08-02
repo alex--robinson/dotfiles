@@ -22,9 +22,8 @@ dunst &
 #starting cmus
 #urxvtc -name cmus -e cmus &
 
-#mpd
+#mpd, now using systemd
 #[ ! -s ~/.config/mpd/pid ] && mpd
-mpd
 #urxvtc -name ncmpcpp -e ncmpcpp &
 
 #auto-hide the mouse
