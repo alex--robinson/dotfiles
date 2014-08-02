@@ -96,8 +96,8 @@ export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
 ##
 ##other useful bits and bobs
 
-###	Handy Extract Program
-###     found at http://dotfiles.org/~blackbook/.bashrc
+# Handy Extract Program
+# found at http://dotfiles.org/~blackbook/.bashrc
 extract () {
      if [ -f $1 ] ; then
          case $1 in
