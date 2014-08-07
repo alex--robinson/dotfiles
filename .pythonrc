@@ -1,0 +1,9 @@
+import sys
+import readline
+import rlcompleter
+
+readline.parse_and_bind("tab: complete")
+sys.ps1 = '\033[31;1m>>> \033[0m'
+sys.ps2 = '\033[31;1m... \033[0m'
+
+
