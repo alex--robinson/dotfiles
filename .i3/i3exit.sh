@@ -16,7 +16,8 @@ case "$1" in
         ;;
     hibernate)
         #lock && systemctl hibernate
-        cmus-remote -s & lock & sudo pm-hibernate
+        #cmus-remote -s & lock & sudo pm-hibernate
+        ncmpcpp pause & lock & sudo pm-hibernate
         ;;
     reboot)
         systemctl reboot
