@@ -1,1 +1,6 @@
 .vim/bundle
+*.pyc
+.ncmpcpp/artists/
+.ncmpcpp/error.log
+.ncmpcpp/patterns.list
+
