@@ -14,7 +14,7 @@ xset fp rehash
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 #for automounting, now using systemd to start
-#udiskie &
+udiskie &
 
 exec i3
 

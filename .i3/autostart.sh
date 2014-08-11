@@ -27,7 +27,7 @@ dunst &
 #urxvtc -name ncmpcpp -e ncmpcpp &
 
 #auto-hide the mouse
-unclutter &
+#unclutter &
 
 # background colour
 #xsetroot -solid '#101010' &
