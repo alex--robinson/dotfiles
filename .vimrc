@@ -1,26 +1,8 @@
-" Vundle
-set nocompatible
-filetype off                   " required!
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-filetype plugin indent on     " required!
-filetype plugin on
-Plugin 'gmarik/Vundle.vim'
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
-Plugin 'ervandew/supertab'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'lilydjwg/colorizer'
-Plugin 'chrisbra/csv.vim'
-Plugin 'Align'
 
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-"Plugin 'itchyny/lightline.vim'
-Plugin 'bling/vim-airline'
 let g:airline#extensions#csv#enabled = 1
 "removed section y for encoding from bottom right
 let g:airline#extensions#default#layout = [
@@ -30,42 +12,10 @@ let g:airline#extensions#default#layout = [
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='zenburn'
-"replaced with bufferline
-""let g:airline#extensions#tabline#enabled = 1
-Plugin 'bling/vim-bufferline'
-let g:airline#extensions#bufferline#enabled = 1
 
-"Plugin 'edkolev/tmuxline.vim'
-
-Plugin 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode='c'
 
-Plugin 'vim-latex/vim-latex'
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats = 'pdf, aux'
-let g:Tex_ViewRule_pdf = 'mupdf'
-"imap <C-space> <Plug>IMAP_JumpForward
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-
-"Plugin 'lukerandall/haskellmode-vim'
-"let g:haddock_browser="/usr/bin/dwb"
-
-"Plugin 'mbbill/undotree'
-"nmap <C-k> :UndotreeT"oggle<CR>
-
-"Plugin 'majutsushi/tagbar'
-"nmap <C-m> :TagbarToggle<CR>
-
 " colorscheme
-Plugin 'flazz/vim-colorschemes'
-"Plugin 'altercation/vim-colors-solarized'
-"set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
-"Plugin 'jnurmine/Zenburn'
 let g:zenburn_high_Contrast=1
 colorscheme zenburn
 set t_Co=256
@@ -180,4 +130,8 @@ set noswapfile
 
 "using the mouse
 set mouse=a
-map <2-LeftMouse> za
+"map <2-LeftMouse> za
+
+" setting the terminal window title
+autocmd BufEnter * let &titlestring = 'VIM - ' . expand("%:t")
+set title
