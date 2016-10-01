@@ -34,7 +34,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 map Q <nop>
 "using semicolon to use the command line
 "Do I really want to override ;?
-nnoremap ; :
+"nnoremap ; :
 "easier window navigation
 "map <C-h> <C-w>h
 "map <C-j> <C-w>j

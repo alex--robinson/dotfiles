@@ -1,7 +1,7 @@
 #!/bin/sh
 lock() {
-    #i3lock -c 202020
-    ~/.i3/i3lock-wrapper
+    i3lock -c 202020
+    #~/.i3/i3lock-wrapper
 }
 
 case "$1" in
@@ -15,9 +15,9 @@ case "$1" in
         lock && systemctl suspend
         ;;
     hibernate)
-        #lock && systemctl hibernate
+        lock && systemctl hibernate
         #cmus-remote -s & lock & sudo pm-hibernate
-        ncmpcpp pause & lock & sudo pm-hibernate
+        #ncmpcpp pause & lock & sudo pm-hibernate
         ;;
     reboot)
         systemctl reboot

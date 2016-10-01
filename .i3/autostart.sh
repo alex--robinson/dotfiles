@@ -2,7 +2,7 @@
 
 
 # set startup volume
-amixer set Master 40%
+#amixer set Master 40%
 
 # disable beeps
 xset -b &
@@ -14,7 +14,7 @@ xset dpms 300 600 900 &
 xbacklight -set 60 &
 
 # OSD
-dunst &
+#dunst &
 
 #Notify-send when battery is low
 #battery-notification.sh &
