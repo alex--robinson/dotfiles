@@ -169,11 +169,11 @@ bindsym $mod+MOD1+Right exec ncmpcpp next
 bindsym $mod+MOD1+Up exec ncmpcpp stop
 bindsym $mod+MOD1+Left exec ncmpcpp prev
 
-bindsym $mod+o exec urxvtc -name ncmpcpp -g 128x36 -e ncmpcpp -s media-library &
+bindsym $mod+o exec urxvt -name ncmpcpp -g 128x36 -e ncmpcpp -s media-library &
 for_window [class="^URxvt$" instance="ncmpcpp"] floating enable
 
 #open ranger file-Manager
-bindsym $mod+m exec /usr/bin/urxvtc -e /usr/bin/ranger
+bindsym $mod+m exec /usr/bin/urxvt -e /usr/bin/ranger
 
 #open Cmus music player on Scratchpad at start
 #bindsym $mod+c exec /usr/bin/urxvtc -e /usr/bin/cmus
@@ -189,7 +189,8 @@ for_window [class="^URxvt$" instance="dwb"] floating enable
 #bindsym $mod+i exec chromium
 
 #attach tmux
-bindsym $mod+t exec urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+#bindsym $mod+t exec urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+bindsym $mod+t exec urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s$USER@$HOSTNAME"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

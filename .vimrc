@@ -13,7 +13,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='zenburn'
 
-let g:ctrlp_working_path_mode='c'
+let g:ctrlp_working_path_mode='ra'
 
 " colorscheme
 let g:zenburn_high_Contrast=1
